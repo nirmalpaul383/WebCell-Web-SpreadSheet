@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebCell(Web SpreadSheet) by N Paul</title>
+  <!-- HTML -->
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+  <!--WebCell(Web SpreadSheet) by N Paul. This project is originally made by me (N Paul) (https://github.com/nirmalpaul383). You can download source files from my github profile https://github.com/nirmalpaul383 .It has a wide range of formulas that you can use to your calculation. You will find most common formulas already pre-defined here. Although I have not covered all formulas , for example I have not defined any 'range()' or ':' formula here(To be honest It would have been very complicated). However, you can also create your own functions / formulas or even variables,arrays or even object with JavaScript's code... My YouTube Page: https://www.youtube.com/channel/UCY6JY8bTlR7hZEvhy6Pldxg/ FaceBook Page: https://www.facebook.com/a.New.Way.Technical/ GitHub Page: https://github.com/nirmalpaul383
+   -->
+</head>
+
+<body>
+  <div id="intro">
+    <span style="color:rgb(153, 255, 102)">Welcome to <span style="color:rgb(255, 0, 102)">WebCell(Web SpreadSheet) by N Paul</span><br>V1.0.0</span><br>
+    <hr>
+    <span style="position:absolute; buttom:1px; color:rgb(102, 255, 204)">Loding...<span style="color:rgb(255, 0, 0)">Please Wait</span></span>
+  </div>
+  <div id="toolBar">
+    <button class="toolNav" onmouseover="enableTool1()" onclick="enableTool1()">Add Function</button>
+    <button class="toolNav" onmouseover="enableTool2()" onclick="enableTool2()">Settting</button>
+    <button class="toolNav" onmouseover="enableTool3()" onclick="enableTool3()">Help</button>
+    <table id='tool1'>
+      <thead>
+        <th>
+          <span style="color: red; border:1px solid red">Add Functions using JS</span>
+        </th>
+      </thead>
+      <tr>
+        <td>
+          <textarea style="resize: none" id='customCodesLog'></textarea>
+        </td>
+        <td><button id="customCodesAccept" onclick="addCustomCode()">Accept</button></td>
+      </tr>
+      <tr>
+        <td><input id="customCode" type="text" placeholder="Enter JS Codes"></td>
+      </tr>
+    </table>
+    <div id="tool2">
+      <span style="border:1px double Red; color:#ccffff">Setting</span>
+      <p style="color:rgb(255, 213, 0)">You can <b>Enter cell referance </b> <input style='color:red' maxlength="3" pattern="^[a-zA-Z]{1}\d{1,2}$" size="4" type='text' id='tool2CellRef'> in here and change</p> <span style='border:1px solid red; color:red'>Background color</span><input id='backCol' type="color" onchange="backColChange()">
+      <p style="color:rgb(0, 255, 204)"><span style='border:1px solid rgb(29, 244, 1); color:rgb(29, 244, 1)'>font color</span><input id='fontCol' type="color" onchange="fontColChange()"></p>
+      <p style="color:rgb(0, 255, 204)"> and even <span style='border:1px solid rgb(0, 217, 255); color:rgb(0, 217, 255)'>font size </span><input id='fontSize' type="range" min="1" max="100" step="5" onchange="fontSizeChange()"></p>
+    </div>
+    <div id="tool3">
+      <span style="border: 2px solid #000066; color:Yellow">Help</span>
+      <br>
+      <span id="about" style="color:#33ccff">WebCell(Web SpreadSheet) by <span style="color:red">N Paul </span>This project is originally made by<a href="https://github.com/nirmalpaul383" target="_blank"><span style="color:red"> me (N Paul) </span> </a> .It has a wide range of formulas that you can use to your calculation. You will find most common formulas already pre-defined here. Although I have not covered all formulas , for example I have not defined any 'range()' or ':' formula here(To be honest It would have been very complicated). However, you can also create your own functions / formulas or even variables,arrays or even object with JavaScript's code...
+        <a href="" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">Download Source Codes</span> <span style="color:red;font-weight: bold;">(please give a star to this project)</span></button></a> Follow me on<a href="https://www.youtube.com/channel/UCY6JY8bTlR7hZEvhy6Pldxg" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">YouTube</span></button></a><br><a href="https://www.facebook.com/a.New.Way.Technical" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">FaceBook Page</span></button></a><br><a href="https://github.com/nirmalpaul383" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">Github</span></button></a>
+        <br>
+        <span style="color:rgb(0, 255, 0)">Some pre-defined formulas:</span>
+        <dl>
+          <dt>abs(x)</dt>
+          <dd>Return absolute value. e.g 'abs(-5)' return +5</dd>
+          <dt>acos(x)</dt>
+          <dd>Returns the arccosine (in radians) of a number. 'x' is between -1 to +1</dd>
+          <dt>asin(x)</dt>
+          <dd>Returns the arcsine (in radians) of a number.</dd>
+          <dt>atan(x)</dt>
+          <dd>Returns The arctangent (in radians) of the given number.</dd>
+          <dt>atan2(x,y)</dt>
+          <dd>Returns the angle in the plane (in radians) between the positive x-axis and the ray from (0,0) to the point (x,y).</dd>
+          <dt>cbrt(x)</dt>
+          <dd>Returns cube root of the given number.</dd>
+          <dt>sin(x)</dt>
+          <dd>Returns sine of the given number.</dd>
+          <dt>cos(x)</dt>
+          <dd>Returns cosine of the given number.</dd>
+          <dt>tan(x)</dt>
+          <dd>Returns tangent of the given number.</dd>
+          <dt>ceil(x)</dt>
+          <dd>Returns smallest integer greater than or equal to the given number.</dd>
+          <dt>floor(x)</dt>
+          <dd>Returns a number representing the largest integer less than or equal to the given number.</dd>
+          <dt>rand()</dt>
+          <dd>Returns a floating-point, pseudo-random number between 0 (inclusive) and 1 (exclusive).</dd>
+          <dt>pow(x,y)</dt>
+          <dd>Returns number representing the given base(x) taken to the power of the given exponent(y).</dd>
+          <dt>sqrt(x)</dt>
+          <dd>Returns the square root of a given number.</dd>
+          <dt>log(x)</dt>
+          <dd>Returns the natural logarithm (base e) of a number.</dd>
+          <dt>log10(x)</dt>
+          <dd>Returns the base 10 logarithm of a number.</dd>
+          <dt>max(a,b,c..)</dt>
+          <dd>Returns the largest of the given numbers.</dd>
+          <dt>min(a,b,c..)</dt>
+          <dd>Returns the smallest of the given numbers.</dd>
+          <dt>mod(number, divisor)</dt>
+          <dd>Returns the remainder after a number is divided by a divisor.</dd>
+          <dt>if(condition, ifTrue, ifFalse)</dt>
+          <dd>If condition is true then return ifTrue else return ifFalse.</dd>
+          <dt>sum(a,b,c...)</dt>
+          <dd>Returns the summation value of all inputted numbers</dd>
+          <dt>count(a,b,c...)</dt>
+          <dd>Count all input parameter in number.</dd>
+          <dt>avg(a,b,c...)</dt>
+          <dd>Returns average value of inputted numbers.</dd>
+          <dt>even(x)</dt>
+          <dd>Returns true if given number(x) is even else return false</dd>
+          <dt>odd(x)</dt>
+          <dd>Returns true if given number(x) is odd else return false</dd>
+        </dl>
+        <br>
+        <span> You can add your own function via JavaScript code.. <br>For example:(1) in [Add Function] just write <span style="color:#ee00ff">'var soda =50;'</span>. and in cell whenever you write '=soda*2' it will return 100.<br>For example:(2) in [Add Function] write <span style="color:#ee00ff">'function areaOfRect(x,y) {return x*y}'</span> . and in cell you can use this formula to calculate the area of a rectangle.<br>
+          In this way you can define your own functions/formulas, variables, arrays, objects and almost anything... </span>
+        <br><a href="" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">Download Source Codes</span> <span style="color:red;font-weight: bold;">(please give a star to this project)</span></button></a> Follow me on<a href="https://www.youtube.com/channel/UCY6JY8bTlR7hZEvhy6Pldxg" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">YouTube</span></button></a><br><a href="https://www.facebook.com/a.New.Way.Technical" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">FaceBook Page</span></button></a><br><a href="https://github.com/nirmalpaul383" target="_blank"><button style="cursor:pointer;"><span style="font-weight: bold;">Github</span></button></a>
+        <br>
+    </div>
+  </div>
+  <table id="table">
+  </table>
+  <!-- Project -->
+  <script src="misc.js"></script>
+  <script src="main.js"></script>
+  <script src="formulas.js"></script>
+</body>
+
+</html>

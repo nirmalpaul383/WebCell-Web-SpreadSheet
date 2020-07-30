@@ -1,0 +1,133 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-size: 15pt;
+}
+
+/* WebCell(Web SpreadSheet) by N Paul. This project is originally made by me (N Paul) (https: //github.com/nirmalpaul383). You can download source files from my github profile https://github.com/nirmalpaul383 .It has a wide range of formulas that you can use to your calculation. You will find most common formulas already pre-defined here. Although I have not covered all formulas , for example I have not defined any 'range()' or ':' formula here(To be honest It would have been very complicated). However, you can also create your own functions / formulas or even variables,arrays or even object with JavaScript's code... My YouTube Page: https://www.youtube.com/channel/UCY6JY8bTlR7hZEvhy6Pldxg/ FaceBook Page: https://www.facebook.com/a.New.Way.Technical/ GitHub Page: https://github.com/nirmalpaul383
+   */
+
+#intro {
+  background: rgb(58, 65, 89);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#toolBar {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 180px;
+  text-align: center;
+  padding: 2px;
+  background: rgb(51, 55, 72);
+  display: none;
+  z-index: 2;
+}
+
+.toolNav {
+  display: inline-block;
+  width: 30%;
+  height: 40px;
+  background-color: #00ffbf;
+  color: Black;
+}
+
+
+.toolNav:hover {
+  background-color: #cc00ff;
+}
+
+.toolNav:active {
+  background-color: #0033ff;
+}
+
+#tool2 {
+  display: none;
+}
+
+#tool3 {
+  width: 100vw;
+  height: 140px;
+  overflow: auto;
+  display: none;
+}
+
+dt {
+  color: #ff0000;
+}
+
+dd {
+  color: #eeff00;
+}
+
+#tool2CellRef:invalid {
+  border: red solid 3px;
+}
+
+#customCodesLog {
+  width: 74vw;
+  left: 0px;
+  height: 75px;
+  display: block;
+  background: black;
+  color: rgb(4, 245, 0);
+}
+
+#customCode {
+  background: white;
+  border: 2px solid blue;
+  display: inline-block;
+  width: 74vw;
+  height: 25px;
+  border-radius: 8px;
+}
+
+
+#customCodesAccept {
+  position: absolute;
+  width: 22vw;
+  height: 70px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #00f0a0;
+}
+
+#customCodesAccept:hover {
+  background: #00ccff;
+}
+
+#customCodesAccept:active {
+  background: #ff3300;
+}
+
+
+#table {
+  border: 1px solid black;
+  padding: 2px;
+  display: none;
+  position: absolute;
+  top: 182px;
+  z-index: 1;
+}
+
+
+.cell {
+  width: 120px;
+  height: 50px;
+  border: 1px solid blue;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: cell;
+}
+
+
+.cell::placeholder {
+  text-align: center;
+}
