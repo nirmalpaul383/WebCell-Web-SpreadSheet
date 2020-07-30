@@ -1,5 +1,9 @@
 # WebCell-Web-SpreadSheet
 A web SpreadSheet project written in web language(html,css and JavaScript). It can be run completely offline...
+...................................................................................................................................
+Live Preview: https://nirmalpaul383.github.io/WebCell-Web-SpreadSheet/
+
+....................................................................................................................................
 
 About: A completely offline JavaScript-based SpreadSheet program. It has been written with pure(stock) JS. No additional 3rd party API or framework/library has been used. I have commented on every major logic's code block in this program.
 A completely offline JavaScript-based SpreadSheet program. It has been written with pure(stock) JS.
