@@ -100,7 +100,7 @@ function engineRef(inputExpression) {
 
       if (document.getElementById(idTemp).className == 'cell') /*It will test whether the cell reference is referring to the cell by using className*/
       {
-        inputExpression = inputExpression.replace(/(?<![a-z])(?<!\')(?<!\")([a-z][1-9]{1,2})(?!\")(?!\')(?![a-z])/i, Number(document.getElementById(idTemp).value)); /* Replace cell ref with actual value of that cell*/
+        inputExpression = inputExpression.replace(/(?<![a-z])(?<!\')(?<!\")([a-z][1-9][0-9]{0,1})(?!\")(?!\')(?![a-z])/i, Number(document.getElementById(idTemp).value)); /* Replace cell ref with actual value of that cell*/
       }
       temp = cellRef.exec(inputExpression);
     } /* When loop is complete it will automaticlly replace all cell ref with its value and return inputExpression string */
