@@ -87,7 +87,7 @@ function engineUpdate() {
 
 //Calculate expression
 function engineRef(inputExpression) {
-  let cellRef = /(?<![a-z])(?<!\')(?<!\")([a-z][1-9]{1,2})(?!\")(?!\')(?![a-z])/gi; //Reg Expression for capturing cell reference
+  let cellRef = /(?<![a-z])(?<!\')(?<!\")([a-z][1-9][0-9]{0,1})(?!\")(?!\')(?![a-z])/gi; //Reg Expression for capturing cell reference
 
   { //Replace all cell reference with its value
 
