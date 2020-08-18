@@ -119,22 +119,6 @@ function engineFunctionExecuter(input) {
     /* To avoid/ensure 'if formula function' does not execute as JavaScript's 'if function' */
   };
 
-  //First, custom codes have been executed
-  for (let i = 0; i < customCodeArr.length; i++)
-  {
-    /* If bad syntax or any invalid expression is given program flow should not be stopped and errror message should be shown */
-    try { eval(customCodeArr[i]) }
-    catch (error) {
-      document.getElementById('customCodesLog').value += `
-    
-    [WARNING -->] Custom Codes has some invalid expression please rectify that. All custom codes have been stored on 'customCodeArr' array.
-    Error description: ${error}
-    
-    `
-    };
-  };
-
-
   /* If bad syntax or any invalid expression is given program flow should not be stopped and errror message should be shown */
   //Second, cell expression should be executed
   try {
