@@ -226,6 +226,43 @@
         return ans;
       };
     };
-  };
 
-}
+    function fibonacci(FibonacciNumberIndex) {
+      /* Returns Fibonacci number/value (according to the Fibonacci number series) of a given index value */
+
+      let a = 0;
+      let b = 1;
+      let c;
+
+      if ((FibonacciNumberIndex % 1) != 0) {
+        return "Please provide a Integer number"
+      }; // If a floating point number is given then the calculation will not be done
+
+      if (FibonacciNumberIndex == 0) {
+        return 0;
+      }
+      else if (FibonacciNumberIndex < 0) {
+        return "Negative number";
+      }
+      else {
+
+        //Expected output 0,1,1,2,3,5,8,13,21,34 ...
+        //Where userInput 0,1,2,3,4,5,6,7 ,8 ,9 ...
+
+        for (let i = 0; i <= (FibonacciNumberIndex - 2); i++) {
+          c = a + b;
+          a = b;
+          b = c;
+        };
+
+        /* When 'FibonacciNumberIndex' = 0 or 1 , JS Engine does not
+        enter in this 'for loop' above and just only the value of 'b' will be returned.
+        In such case the value of 'b' will be = 1
+        (Value of 'b' is declared at the top inside this function)*/
+
+        return b;
+      };
+    };
+
+  };
+};
