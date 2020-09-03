@@ -239,7 +239,7 @@
       }; // If a floating point number is given then the calculation will not be done
 
       if (FibonacciNumberIndex == 0) {
-        return 0;
+        return 0; // When 'FibonacciNumberIndex' = 0 then 0 will be returned.
       }
       else if (FibonacciNumberIndex < 0) {
         return "Negative number";
@@ -255,9 +255,9 @@
           b = c;
         };
 
-        /* When 'FibonacciNumberIndex' = 0 or 1 , JS Engine does not
+        /* When 'FibonacciNumberIndex' = 1 , JS Engine does not
         enter in this 'for loop' above and just only the value of 'b' will be returned.
-        In such case the value of 'b' will be = 1
+        In that case the value of 'b' will be = 1
         (Value of 'b' is declared at the top inside this function)*/
 
         return b;
