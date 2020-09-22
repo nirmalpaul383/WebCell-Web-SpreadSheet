@@ -18,7 +18,7 @@ This project is originally made by me(N Paul).My github profile https: //github.
 
   //Set all column name (1,2,3 ... 20)
   var column = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,
-         26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+    26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
   var columnLenght = column.length;
 
   //Database(Object) Declearing for keeping old(unsolved) values
@@ -54,12 +54,15 @@ function engineStart(idOfThisEle) {
 
   let input = document.getElementById(idOfThisEle);
 
+  if (input.value != "") {
+    /* Empty expression will not be recorded in oldDB
+    and engineUpdate() will not be called (If an empty expression is provided) */
 
-  oldDB[idOfThisEle] = input.value; /** Record current expression in oldDB with ID **/
+    oldDB[idOfThisEle] = input.value; /** Record current expression in oldDB with ID **/
 
-  engineUpdate(); /** Call Update function **/
+    engineUpdate(); /** Call Update function **/
 
-
+  };
 
 };
 
@@ -98,8 +101,7 @@ function engineRef(inputExpression) {
 
       let idTemp = temp[1].toUpperCase(); /*Convert Cell reference to upper case for accessing with getElementById*/
 
-      if (document.getElementById(idTemp).className == 'cell') /*It will test whether the cell reference is referring to the cell by using className*/
-      {
+      if (document.getElementById(idTemp).className == 'cell') /*It will test whether the cell reference is referring to the cell by using className*/ {
         inputExpression = inputExpression.replace(/(?<![a-z])(?<!\')(?<!\")([a-z][1-9][0-9]{0,1})(?!\")(?!\')(?![a-z])/i, Number(document.getElementById(idTemp).value)); /* Replace cell ref with actual value of that cell*/
       }
       temp = cellRef.exec(inputExpression);
