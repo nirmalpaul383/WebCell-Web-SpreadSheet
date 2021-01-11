@@ -33,11 +33,11 @@ This project is originally made by me(N Paul).My github profile https: //github.
 
   for (let rowNumber = 1; rowNumber <= columnLenght; rowNumber++) {
 
-    // Creating a row with particular id(R & 'current rowNumber')
-    table.innerHTML += `<tr id="R${rowNumber}" > </tr>`;
+    // Creating a row with particular id('createdRow' & 'current rowNumber')
+    table.innerHTML += `<tr id="createdRow${rowNumber}" > </tr>`;
 
     //For selecting current row 'idVar' is created (will be used in next)
-    let idVar = "R" + rowNumber;
+    let idVar = "createdRow" + rowNumber;
 
     // Creating all Table datas(<td> s) in current row:
     for (let Index = 0; Index <= (rowLenght - 1); Index++) {
